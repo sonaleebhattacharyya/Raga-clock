@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <! -- Header Content -- > 
+   <div class = "header">
+   <img src = "images/Screenshot 2022-12-29 at 4.12.27 PM.png" class = "profile-small" alt ="butterfly">
+   <h1> Raga Clock </h1> 
+   <h5> Exploring ragas by time of day</h5>
+   </div>
+   <main>
+    <div> 
+        <div class = "flexcontainer">
+            <button id = "3-5" class="btn success time"> 
+                3AM-5AM </button>
+            <button id = "5-7" class="btn info time">
+                5AM-7AM </button>
+            <button id = "7-11" class="btn warning time">
+                7AM-11AM </button>
+            <button id = "11-16" class="btn danger time">
+                11AM-4PM </button>
+            <button id = "17-19" class="btn fun time">
+                5PM-7PM  </button>
+            <button id = "19-23" class="btn love time">
+                7PM - 11PM   </button>
+            <button id = "23-24" class="btn pretty time">  
+                11PM - 12AM </button>
+        </div>
+        <div class = "flexcontainer">
+            <div id = "ragas">
+            </div>
+            <div id = "ragadetails">
+            </div>
+        </div>
+    </div>
+   </main>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"> </script>
+
+        
+        
+</body>
+</html>

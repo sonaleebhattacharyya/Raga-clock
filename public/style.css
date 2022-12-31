@@ -1,0 +1,121 @@
+
+/*Top header profile image*/
+
+.profile-small {
+   height:150px;
+   border-radius: 50%;
+   border: 10px solid #FEDE00;
+}
+
+/* Header Title */
+.header {
+  padding: 40px;
+  text-align: center;
+  background: #f9f7f7;
+  margin:30px;
+  font-size:20px;
+}
+
+body {
+    font-family: "Helvetica", Sans-Serif; 
+    background-image: url("../images/elcarito-MHNjEBeLTgw-unsplash.jpg"); 
+}
+
+
+.flexcontainer{
+    display: flex;
+    justify-content: center
+}
+
+
+a {
+    color: #112d4e; 
+  }
+
+  .btn {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Green */
+  .success {
+    border-color: #04AA6D;
+    color: green;
+  }
+  .success:hover {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  /* Blue */
+  .info {
+    border-color: #2196F3;
+    color: dodgerblue
+  }
+  .info:hover {
+    background: #2196F3;
+    color: white;
+  }
+
+  /* Orange */
+  .warning {
+    border-color: #ff9800;
+    color: orange;
+  }
+  .warning:hover {
+    background: #ff9800;
+    color: white;
+  }
+  
+  /* Red */
+  .danger {
+    border-color: #f44336;
+    color: red
+  }
+  .danger:hover {
+    background: #f44336;
+    color: white;
+  }
+  
+    /* Purple */
+    .fun {
+    border-color: #d13a9a;
+    color: #d13a9a
+  }
+  .fun:hover {
+    background: #d13a9a;
+    color: white;
+  }
+
+      /* Teal */
+      .love {
+    border-color: #04aab2;
+    color: #04aab2
+  }
+  .love:hover {
+    background: #04aab2;
+    color: white;
+  }
+
+        /* Yellow */
+        .pretty {
+    border-color: #fad102;
+    color: #fad102
+  }
+  .pretty:hover {
+    background: #fad102;
+    color: white;
+  }
+  /* Gray */
+  .default {
+    border-color: #e7e7e7;
+    color: black;
+  }
+  .default:hover {
+    background: #e7e7e7;
+  }
