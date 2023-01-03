@@ -7,10 +7,11 @@ window.onload = ()=> {
     }) 
 }
 const ragaclick = (event)=> {
+    event.stopPropagation()
     let id = event.target.id
     axios.get("http://localhost:4004/ragas/"+id).then((res)=> {
         console.log(res)
-        const ragasDiv= document.querySelector("#ragadetails");
+        const ragasDiv= event.target.parentElement.parentElement.querySelector(".ragadetails");
         ragasDiv.innerHTML= "";
         const h1=document.createElement("h1")
         h1.textContent=res.data[0].raganame
@@ -27,14 +28,15 @@ const ragaclick = (event)=> {
     })
 }
 let timeclick = (event)=>{
-    const ragadetails= document.querySelector("#ragadetails");
+    event.stopPropagation()
+    const ragadetails= event.target.parentElement.querySelector(".ragadetails");
     ragadetails.innerHTML = ""
     let [starttime, endtime] = event.target.id.split("-")
     // let body = {
     //     starttime: parseInt(starttime), endtime: parseInt(endtime)
     // }
     axios.get("http://localhost:4004/ragas/"+starttime+"/"+endtime).then((res)=> {
-        const ragasDiv= document.querySelector("#ragas");
+        const ragasDiv= event.target.querySelector(".ragas");
         ragasDiv.innerHTML= "";
         for(const raga of res.data){
             const ragaElement = document.createElement("p")

@@ -58,5 +58,21 @@ module.exports = {
         sequelize.query(`select * from raga where ragaid = ?`, {replacements:[ragaid]})
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log(err));
-    }
+    },
+
+    postRaga: (req, res) => {
+        let raganame = req.params.raganame
+        let description = req.params.description
+        let starttime = parseInt(req.params.starttime)
+        let endtime = parseInt(req.params.endtime)
+        let url = req.params.url
+        sequelize.query(`
+        insert into raga (raganame, description, starttime, endtime, url)
+        values (?, ?, ?, ?, ?)`, {replacements:[raganame, description, starttime, endtime, url]})
+        .then(() => {
+            console.log('DB seeded!')
+            res.sendStatus(200)
+        })
+        .catch(err => console.log('error seeding DB', err))
+    }, 
 }

@@ -4,44 +4,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Raga Clock</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+    const submitRaga = (e) => {
+    e.preventDefault()
+    console.log("hi")
+    console.log(e)
+}
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"> </script>
 </head>
 <body>
    <! -- Header Content -- > 
    <div class = "header">
+    <div>
    <img src = "images/Screenshot 2022-12-29 at 4.12.27 PM.png" class = "profile-small" alt ="butterfly">
    <h1> Raga Clock </h1> 
    <h5> Exploring ragas by time of day</h5>
+</div>
+<div>
+    <h2>Create your raga</h2>
+    <form onsubmit = "submitRaga() ; return false" >
+        <input name = "raganame" type = "text"/>
+        <input name = "description" type = "text"/>
+        <input name = "starttime" type = "number"/>
+        <input name = "endtime" type = "number"/>
+        <input name = "url" type = "text"/>
+        <button class="btn" type = "submit">Submit</button>
+    </form>
+</div>
    </div>
    <main>
     <div> 
         <div class = "flexcontainer">
             <button id = "3-5" class="btn success time"> 
-                3AM-5AM </button>
+                3AM-5AM   <div class = "flexcontainer">
+                    <div class = "ragas">
+                    </div>
+                    <div class = "ragadetails">
+                    </div>
+                </div> </button>
             <button id = "5-7" class="btn info time">
-                5AM-7AM </button>
+                5AM-7AM <div class = "flexcontainer">
+                    <div class = "ragas">
+                    </div>
+                    <div class = "ragadetails">
+                    </div>
+                </div></button>
             <button id = "7-11" class="btn warning time">
-                7AM-11AM </button>
+                7AM-11AM <div class = "flexcontainer">
+                    <div class = "ragas">
+                    </div>
+                    <div class = "ragadetails">
+                    </div>
+                </div></button>
             <button id = "11-16" class="btn danger time">
-                11AM-4PM </button>
+                11AM-4PM <div class = "flexcontainer">
+                    <div class = "ragas">
+                    </div>
+                    <div class = "ragadetails">
+                    </div>
+                </div></button>
             <button id = "17-19" class="btn fun time">
-                5PM-7PM  </button>
+                5PM-7PM  <div class = "flexcontainer">
+                    <div class = "ragas">
+                    </div>
+                    <div class = "ragadetails">
+                    </div>
+                </div></button>
             <button id = "19-23" class="btn love time">
-                7PM - 11PM   </button>
+                7PM - 11PM  <div class = "flexcontainer">
+                    <div class = "ragas">
+                    </div>
+                    <div class = "ragadetails">
+                    </div>
+                </div> </button>
             <button id = "23-24" class="btn pretty time">  
-                11PM - 12AM </button>
-        </div>
-        <div class = "flexcontainer">
-            <div id = "ragas">
-            </div>
-            <div id = "ragadetails">
-            </div>
+                11PM - 12AM <div class = "flexcontainer">
+                    <div class = "ragas">
+                    </div>
+                    <div class = "ragadetails">
+                    </div>
+                </div> </button>
         </div>
     </div>
    </main>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="script.js"> </script>
+
 
         
         
