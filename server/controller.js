@@ -28,13 +28,16 @@ module.exports = {
         ); 
 
         insert into raga (raganame, description, starttime, endtime, url)
-        values ('Todi', 'early morning', 3, 5, 'https://www.youtube.com/embed/gG03f74Wrws'), 
-        ('Ahir Bhairav', 'early morning', 5, 7, 'https://www.youtube.com/embed/2gi6aG6DDMY'),
-        ('Charukeshi', 'early morning', 7, 11, 'https://www.youtube.com/embed/_U4J6CpuNyQ'),
+        values ('Todi', 'early morning', 8, 10, 'https://www.youtube.com/embed/gG03f74Wrws'), 
+        ('Ahir Bhairav', 'early morning', 8, 10, 'https://www.youtube.com/embed/2gi6aG6DDMY'),
+        ('Charukeshi', 'early morning', 8, 10, 'https://www.youtube.com/embed/_U4J6CpuNyQ'),
+        ('Bilaskani Todi', 'early morning', 8, 10, 'https://www.youtube.com/watch?v=dea-EWmC0Sg'),
+        ('Charukeshi', 'early morning', 8, 10, 'https://www.youtube.com/embed/_U4J6CpuNyQ'),
         ('Myaki Sarang', 'early morning', 11, 16, 'https://www.youtube.com/embed/_YsLrD_aIFk'),
-        ('Puriya Danashree', 'early morning', 17, 19, 'https://www.youtube.com/embed/9X3vjQXx7xw'),
+        ('Puriya Dhanashree', 'early morning', 17, 19, 'https://www.youtube.com/embed/9X3vjQXx7xw'),
         ('Kirwani', 'early morning', 19, 23, 'https://www.youtube.com/embed/zz8KTDcn_T0'),
-        ('Darbari Kanada', 'early morning', 23, 24, 'https://www.youtube.com/embed/A0w_1cOCe8s');
+        ('Darbari Kanhara', 'early morning', 23, 24, 'https://www.youtube.com/embed/A0w_1cOCe8s'), 
+        ('asdfasdf', 'early morning', 23, 24, 'https://www.youtube.com/embed/A0w_1cOCe8s')
         `)
         .then(() => {
             console.log('DB seeded!')
@@ -61,11 +64,11 @@ module.exports = {
     },
 
     postRaga: (req, res) => {
-        let raganame = req.params.raganame
-        let description = req.params.description
-        let starttime = parseInt(req.params.starttime)
-        let endtime = parseInt(req.params.endtime)
-        let url = req.params.url
+        let raganame = req.body.body.raganame
+        let description = req.body.body.description
+        let starttime = parseInt(req.body.body.starttime)
+        let endtime = parseInt(req.body.body.endtime)
+        let url = req.body.body.url
         sequelize.query(`
         insert into raga (raganame, description, starttime, endtime, url)
         values (?, ?, ?, ?, ?)`, {replacements:[raganame, description, starttime, endtime, url]})

@@ -5,6 +5,7 @@ window.onload = ()=> {
     timeElements.forEach(element => {
         element.addEventListener("click", timeclick)
     }) 
+    document.getElementById("raga-form").addEventListener("submit", submitRaga)
 }
 const ragaclick = (event)=> {
     event.stopPropagation()
@@ -47,4 +48,20 @@ let timeclick = (event)=>{
         }
     })
 
+}
+
+const submitRaga = (e) => {
+    e.preventDefault()
+    console.log("hi")
+    console.log(e)
+    const raganame = e.target.elements.raganame.value
+    const description = e.target.elements.description.value
+    const starttime = Number(e.target.elements.starttime.value)
+    const endtime = Number(e.target.elements.endtime.value)
+    const url = e.target.elements.url.value
+    axios.post("/postRaga", {body: {
+        raganame, description, starttime, endtime, url
+    }}).then((res)=> {
+        console.log(res)
+    })
 }
