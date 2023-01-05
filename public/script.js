@@ -21,23 +21,26 @@ const putRaga = () => {}
 }
 const ragaclick = (event)=> {
     event.stopPropagation()
+    const ragasDiv= event.target.parentElement.parentElement.querySelector(".ragadetails");
+    ragasDiv.innerHTML= "";
     let id = event.target.id
     axios.get("http://localhost:4004/ragas/"+id).then((res)=> {
         console.log(res)
-        const ragasDiv= event.target.parentElement.parentElement.querySelector(".ragadetails");
-        ragasDiv.innerHTML= "";
         const h1=document.createElement("h1")
         h1.innerHTML="<span class = 'edit'> &#9998; </span>" + `<span class = 'content'> ${res.data[0].raganame} </span>`
         ragasDiv.appendChild(h1)
         const description=document.createElement("p")
         description.innerHTML="<span class = 'edit'> &#9998; </span>" + `<span class = 'content'> ${res.data[0].description} </span>`
         ragasDiv.appendChild(description)
-        const iframe=document.createElement("iframe")
-        iframe.setAttribute("width",560)
-        iframe.setAttribute("height",300)
-        iframe.setAttribute("allowfullscreen","true")
-        iframe.setAttribute("src", res.data[0].url)
-        ragasDiv.appendChild(iframe)
+        // const iframe=document.createElement("iframe")
+        // iframe.setAttribute("width",560)
+        // iframe.setAttribute("height",300)
+        // iframe.setAttribute("allowfullscreen","true")
+        // iframe.setAttribute("src", res.data[0].url)
+        // ragasDiv.appendChild(iframe)
+        ragasDiv.innerHTML = `
+        <iframe width="560" height="315" src="${res.data[0].url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        `
     })
 }
 let timeclick = (event)=>{

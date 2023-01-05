@@ -122,4 +122,8 @@ module.exports = {
         })
         .catch(err => console.log('error in put request', err))
     }, 
+
+    // deleteRaga: (req, res) => {
+    //    
+    // }
 }
