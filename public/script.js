@@ -5,7 +5,19 @@ window.onload = ()=> {
     timeElements.forEach(element => {
         element.addEventListener("click", timeclick)
     }) 
+    const editElements = document.querySelectorAll(".edit")
+    editElements.forEach(element => {
+        element.addEventListener("click", editclick)
+        element.addEventListener("keypress", putRaga)
+        element.addEventListener("focusout", putRaga)
+
+    }) 
     document.getElementById("raga-form").addEventListener("submit", submitRaga)
+} 
+
+const putRaga = () => {}
+    const editclick = (e) => {
+    e.target.sibling.editable=true
 }
 const ragaclick = (event)=> {
     event.stopPropagation()
@@ -15,10 +27,10 @@ const ragaclick = (event)=> {
         const ragasDiv= event.target.parentElement.parentElement.querySelector(".ragadetails");
         ragasDiv.innerHTML= "";
         const h1=document.createElement("h1")
-        h1.textContent=res.data[0].raganame
+        h1.innerHTML="<span class = 'edit'> &#9998; </span>" + `<span class = 'content'> ${res.data[0].raganame} </span>`
         ragasDiv.appendChild(h1)
         const description=document.createElement("p")
-        description.textContent=res.data[0].description
+        description.innerHTML="<span class = 'edit'> &#9998; </span>" + `<span class = 'content'> ${res.data[0].description} </span>`
         ragasDiv.appendChild(description)
         const iframe=document.createElement("iframe")
         iframe.setAttribute("width",560)
@@ -42,7 +54,7 @@ let timeclick = (event)=>{
         for(const raga of res.data){
             const ragaElement = document.createElement("p")
             ragaElement.setAttribute("id", raga.ragaid)
-            ragaElement.textContent = raga.raganame
+            ragaElement.innerHTML=raga.raganame
             ragaElement.addEventListener("click", ragaclick)
             ragasDiv.appendChild(ragaElement)
         }

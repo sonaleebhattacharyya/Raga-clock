@@ -10,6 +10,8 @@ Then I created buttons (specific to times of day) which access the database and 
 
 I also included a url of an artist performing this raga that the user can listen to. 
 
-Finally, I created an input button where the user can modify the database by adding other ragas appropriate 
+Then, I created an input button where the user can modify the database by adding other ragas appropriate 
 to that time of day (put request). 
+
+Post and Delete Requests: 
 
